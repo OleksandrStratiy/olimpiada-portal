@@ -30,7 +30,7 @@
   {
     "id": "A2",
     "title": "Різні числа",
-    "topic": "stl-assoc",
+    "topic": "set-map",
     "level": 1,
     "time": "1 с",
     "memory": "256 МБ",
@@ -59,7 +59,7 @@
   {
     "id": "A3",
     "title": "Шкільна лінійка",
-    "topic": "sorting",
+    "topic": "sort",
     "level": 1,
     "time": "1 с",
     "memory": "256 МБ",
@@ -82,7 +82,7 @@
   {
     "id": "A4",
     "title": "Суми на відрізках",
-    "topic": "prefix",
+    "topic": "prefix-sums",
     "level": 2,
     "time": "1 с",
     "memory": "256 МБ",
@@ -106,7 +106,7 @@
   {
     "id": "A5",
     "title": "Мотузки",
-    "topic": "binsearch",
+    "topic": "binary-search",
     "level": 2,
     "time": "1 с",
     "memory": "256 МБ",
@@ -189,7 +189,7 @@
   {
     "id": "A8",
     "title": "Підмножини з сумою",
-    "topic": "recursion",
+    "topic": "brute-force",
     "level": 2,
     "time": "1 с",
     "memory": "256 МБ",
