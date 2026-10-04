@@ -294,7 +294,7 @@ def check_lesson(lid, title, runner, jobs):
             if ex["solution"]:
                 jobs.append(("exercise", name, ex["solution"], ex["examples"] + ex["tests"]))
             if ex["starter"]:
-                jobs.append(("starter", name, ex["starter"]))
+                jobs.append(("starter", name, ex["starter"], str(ex.get("broken", "")).lower() in ("true", "yes", "1")))
         elif b["lang"] in ("input", "output") and not b["adjacent"]:
             pass
         k += 1
@@ -320,7 +320,9 @@ def run_job(job, runner):
         return []
     if kind == "starter":
         exe, cerr = runner.compile(job[2])
-        return [] if exe else [f"{where}: стартовий код не компілюється\n{cerr[:800]}"]
+        if job[3]:
+            return [] if exe is None else [f"{where}: стартовий код позначено broken, але він компілюється"]
+        return [] if exe else [f"{where}: стартовий код не компілюється (якщо так задумано, додай рядок «broken: true»)\n{cerr[:800]}"]
     if kind == "exercise":
         _, _, source, tests = job
         exe, cerr = runner.compile(source)
