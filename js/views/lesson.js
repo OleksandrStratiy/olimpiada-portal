@@ -6,7 +6,7 @@ import { isLessonDone, progress } from "../store.js";
 import { db, lessonById, cachedLesson, loadLesson, problemsForTopic, isArchive } from "../data.js";
 import { setTitle, notFound, loading, problemRow } from "./common.js";
 
-const exerciseCount = text => (String(text).match(/^\s{0,3}```exercise\b/gm) || []).length;
+const exerciseCount = text => (String(text).match(/^\s{0,3}`{3,}exercise\b/gm) || []).length;
 const solvedIn = id => Object.keys(progress.exercises).filter(k => k.startsWith(id + "/") && progress.exercises[k] === "solved").length;
 
 export function lessonDonePanel(l) {

@@ -47,8 +47,11 @@ export async function runCode(source, stdin = "") {
     clearTimeout(timer);
   }
   if (!res.ok) throw new RunnerError(res.status === 429 ? "busy" : "server");
-  let r;
-  try { r = await res.json(); } catch (e) { throw new RunnerError("server"); }
+  let data;
+  try { data = await res.json(); } catch (e) { throw new RunnerError("server"); }
+  // Відповідь на запит виконання — це результат запуску. Якщо сервер повернув звичайну
+  // відповідь компіляції, результат запуску лежить у полі execResult.
+  const r = data && data.execResult ? { ...data.execResult, buildResult: data.execResult.buildResult || { code: data.code, stderr: data.stderr } } : data || {};
 
   const build = r.buildResult || {};
   const compileOutput = stripAnsi(joinLines(build.stderr) || "");

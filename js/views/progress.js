@@ -33,8 +33,8 @@ export function viewProgress() {
     </div>
     <div class="stats">
       <div class="card stat"><div class="lbl">Уроків пройдено</div><div class="num">${lessonsDone} <small>з ${lessons}</small></div>${pbar(lessonsDone, lessons)}</div>
-      <div class="card stat"><div class="lbl">Задач з уроків</div><div class="num">${exSolved}</div><span class="muted small">${plural(exSolved, "розв’язана", "розв’язані", "розв’язано")} з автоматичною перевіркою</span></div>
-      <div class="card stat"><div class="lbl">Тренувальних і олімпіадних</div><div class="num">${solved} <small>з ${all.length}</small></div>${pbar(solved, all.length)}</div>
+      <div class="card stat"><div class="lbl">Практика в уроках</div><div class="num">${exSolved}</div><div class="cap">${plural(exSolved, "задача розв’язана", "задачі розв’язані", "задач розв’язано")} з перевіркою</div></div>
+      <div class="card stat"><div class="lbl">Розділ «Задачі»</div><div class="num">${solved} <small>з ${all.length}</small></div>${pbar(solved, all.length)}</div>
     </div>
     ${next ? `<p><a class="btn btn-primary" href="#/lesson/${next.id}">Продовжити: урок ${next.num}. ${esc(next.title)} ${icon("arrow")}</a></p>` : ""}
     ${trying.length ? `<h2 class="section-title">Зараз розв’язую</h2><div class="card plist">${trying.map(problemRow).join("")}</div>` : ""}

@@ -229,8 +229,8 @@ async function benchRun(ctx) {
 
 const testsList = (results, total) => `<ul class="tests">${Array.from({ length: total }, (_, i) => {
   const r = results[i];
-  if (!r) return `<li><span class="t-skip">○</span> Тест ${i + 1}</li>`;
-  return r.pass ? `<li><span class="t-ok">✓</span> Тест ${i + 1}</li>` : `<li><span class="t-bad">✗</span> Тест ${i + 1}</li>`;
+  if (!r) return `<li>○ Тест ${i + 1}</li>`;
+  return r.pass ? `<li class="ok">✓ Тест ${i + 1}</li>` : `<li class="bad">✗ Тест ${i + 1}</li>`;
 }).join("")}</ul>`;
 
 function failHtml(test, got, idx, isExample) {
