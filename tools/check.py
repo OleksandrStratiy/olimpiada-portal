@@ -56,7 +56,7 @@ FENCE = re.compile(r"^(\s*)(`{3,}|~{3,})\s*([^\s`~]*)\s*(.*)$")
 
 def fenced_blocks(text):
     """Повертає блоки коду: lang, meta, text, line, adjacent (між цим і попереднім блоком лише порожні рядки)."""
-    lines = text.replace("\r\n", "\n").replace("\t", "    ").split("\n")
+    lines = text.replace("\r\n", "\n").split("\n")
     out = []
     i = 0
     gap_clean = False

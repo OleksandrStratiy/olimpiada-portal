@@ -52,7 +52,8 @@ const RE = {
   comment: /^\s*<!--/
 };
 
-const indentOf = l => l.length - l.trimStart().length;
+/** Ширина відступу на початку рядка (табуляція — як 4 пробіли). */
+const indentOf = l => /^[ \t]*/.exec(l)[0].replace(/\t/g, "    ").length;
 const isTableStart = (lines, i) => lines[i].includes("|") && i + 1 < lines.length && RE.tableSep.test(lines[i + 1]);
 
 function startsBlock(lines, i) {
@@ -123,7 +124,7 @@ function parseList(lines, start) {
 
 /** Ділить Markdown на блоки: заголовки, абзаци, списки, таблиці, код, виноски. */
 export function parseBlocks(src) {
-  const lines = String(src || "").replace(/\r\n?/g, "\n").replace(/\t/g, "    ").split("\n");
+  const lines = String(src || "").replace(/\r\n?/g, "\n").split("\n");
   const out = [];
   let i = 0;
   while (i < lines.length) {
