@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Зошит олімпіадника</title>
+  <meta name="description" content="Підготовка до олімпіади з інформатики: задачі за категоріями від легких до складних, розв’язки, завдання районних олімпіад Вінницької області минулих років і довідник з C++.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232647C8'/%3E%3Ctext x='16' y='21' font-family='monospace' font-size='12' font-weight='700' fill='white' text-anchor='middle'%3EC++%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Wix+Madefor+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="#/" aria-label="Зошит олімпіадника — на головну">
+        <span class="brand__mark" aria-hidden="true">C++</span>
+        <span class="brand__name">Зошит олімпіадника</span>
+      </a>
+      <nav class="nav" aria-label="Розділи">
+        <a class="nav__link" href="#/" data-nav="problems">Задачі</a>
+        <a class="nav__link" href="#/solutions" data-nav="solutions">Розв’язки</a>
+        <a class="nav__link" href="#/archive" data-nav="archive">Минулі олімпіади</a>
+        <a class="nav__link" href="#/theory" data-nav="theory">Теорія</a>
+        <a class="nav__link" href="#/progress" data-nav="progress">Мій прогрес</a>
+        <a class="nav__link" href="#/teacher" data-nav="teacher">Для вчителя</a>
+      </nav>
+      <button class="icon-btn" id="theme-btn" type="button" data-act="theme" aria-label="Темна тема" title="Темна тема"></button>
+    </div>
+  </header>
+  <main class="page" id="app" tabindex="-1">
+    <p class="muted">Завантаження…</p>
+    <noscript><p>Для роботи порталу потрібно увімкнути JavaScript.</p></noscript>
+  </main>
+  <footer class="footer">Зошит олімпіадника · задачі з C++ для підготовки до олімпіади з інформатики</footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

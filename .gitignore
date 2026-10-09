@@ -1,0 +1,14 @@
+# Системні файли
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Редактори
+.vscode/
+.idea/
+*.swp
+
+# Тимчасові файли
+*.tmp
+*.log
+__pycache__/
